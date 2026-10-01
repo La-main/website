@@ -49,7 +49,30 @@ repository staat. Daardoor is er geen wachtwoord of token nodig.
 - Adres van de salon, openingstijden per dag, annuleringsvoorwaarden, KvK- en
   btw-nummer, telefoon en e-mail.
 - De prijzen van 90 en 120 minuten (alleen € 90 voor 60 minuten is bevestigd).
-- **Boeken loopt straks via Cal.com**, gekoppeld aan de Google Agenda van
-  `info@la-main.nl`. De planner in de pagina rekent de reiskosten uit en geeft
-  die mee; het vastleggen doet Cal.com. Zolang dat niet is ingericht, is de
-  planner een proefversie die niets opslaat.
+- **Cal.com inrichten.** Zie hieronder; tot die tijd staat de knop op
+  "Agenda volgt" en kan er niet geboekt worden.
+
+## Boeken: de planner en Cal.com
+
+De pagina rekent zelf niets vast. Hij bepaalt de behandeling en, bij op locatie,
+de reistijd en reiskosten op postcode, en stuurt de klant daarna door naar
+Cal.com. Daar kiest de klant dag en tijd, en de afspraak komt in de Google
+Agenda van `info@la-main.nl`. La Main beheert haar agenda dus zelf.
+
+Inrichten, één keer:
+
+1. Cal.com-account op `info@la-main.nl`, Google Agenda koppelen.
+2. Drie afspraaktypen maken: 60, 90 en 120 minuten. Noteer van elk de naam uit
+   de link, bijvoorbeeld `cal.com/la-main/massage-60` → `massage-60`.
+3. In de werkversie (`la-main-opzetjes\pagina-h\index.html`) bovenin het laatste
+   script invullen:
+   - `cal: { basis:'https://cal.com/', gebruiker:'la-main' }`
+   - per behandeling het veld `cal:` (`'massage-60'`, `'massage-90'`, `'massage-120'`)
+4. Site opnieuw bouwen en pushen. De knop heet dan "Kies een tijd".
+5. **Nog controleren bij die eerste echte boeking:** de berekening gaat als
+   notitie mee in de link (`?notes=…`). Kijk of Cal.com die notitie overneemt in
+   de afspraak; zo niet, dan zetten we de reiskosten in een eigen vraag bij het
+   afspraaktype.
+
+Bij op locatie buiten het werkgebied of boven 35 minuten reistijd kan er niet
+direct geboekt worden; daar staat dat de klant contact opneemt.
