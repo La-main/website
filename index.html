@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>La Main Eindhoven</title>
-<meta name="description" content="La Main. Massage in Eindhoven, in de salon of bij jou thuis.">
+<title>La Main — massage in Eindhoven en Nuenen</title>
+<meta name="description" content="La Main. Massage in de salon in Eindhoven en Nuenen, en op locatie bij jou thuis of op kantoor.">
 <link rel="stylesheet" href="lettertypes.css">
 <style>
 /* ============================================================
@@ -265,7 +265,10 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 .voet .bellen{margin-top:30px;font-family:var(--kap);font-size:clamp(26px,2.6vw,38px);letter-spacing:.02em}
 .voet .bellen a{border-bottom:1px solid rgba(251,248,243,.3);padding-bottom:4px;transition:border-color .3s}
 .voet .bellen a:hover{border-bottom-color:var(--ivoor)}
-.voet-tekst{margin-top:16px;font-size:17px;color:rgba(251,248,243,.7)}
+.voet-tekst{margin-top:16px;font-size:17px;line-height:1.6;color:rgba(251,248,243,.7)}
+.praktisch{font-size:17px;line-height:1.7;color:var(--inkt-zacht);margin:-14px 0 28px}
+.praktisch b{font-weight:600;color:var(--inkt)}
+.twee-knoppen{display:flex;flex-wrap:wrap;gap:10px}
 .voet-onder{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(251,248,243,.14);font-size:10px;color:rgba(251,248,243,.55)}
 .bel-link{border-bottom:1px solid var(--licht-lijn);white-space:nowrap}
 </style>
@@ -310,7 +313,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     <div class="intro-tekst">
       <p class="kl">Een uur dat helemaal van jou is</p>
       <h2>Rust begint<br>bij aandacht</h2>
-      <p class="tekst">Bij La Main krijg je een massage in alle rust, afgestemd op wat jouw lichaam die dag nodig heeft. In de salon in Eindhoven, of op een plek die jij kiest.</p>
+      <p class="tekst">Bij La Main krijg je een massage in alle rust, afgestemd op wat jouw lichaam die dag nodig heeft. In de salon in Eindhoven of Nuenen, of op een plek die jij kiest.</p>
     </div>
   </div>
   <div class="intro-zweef" aria-hidden="true">
@@ -329,7 +332,11 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
         <div class="beeld"><img class="foto" src="foto/salon-cel.jpg" alt="Een stille ruimte met daglicht door een dun gordijn"></div>
         <h3 class="titel-kap">In de salon</h3>
         <p>Een stille ruimte in Eindhoven, alleen voor jou. Je komt binnen, de deur gaat dicht en de rest van de dag wacht buiten.</p>
-        <button type="button" class="knop rand" data-kies="salon">Plan in de salon</button>
+        <p class="praktisch"><b>Eindhoven</b> · Aalsterweg 99 a · maandag en woensdag, 09:00 – 18:00<br><b>Nuenen</b> · Aardappeleterssteegje 1 C · dinsdag, 09:00 – 18:00</p>
+        <div class="twee-knoppen">
+          <button type="button" class="knop rand" data-kies="eindhoven">Plan in Eindhoven</button>
+          <button type="button" class="knop rand" data-kies="nuenen">Plan in Nuenen</button>
+        </div>
       </article>
       <article>
         <div class="beeld"><img class="foto" src="foto/locatie-cel.jpg" alt="Een kamer bij avondlicht"></div>
@@ -385,7 +392,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     <svg class="lm" viewBox="0 0 3032 1500" role="img" aria-label="La Main"><use href="#lm"/></svg>
     <nav class="kl" aria-label="Voettekst"><a href="#behandelingen">Behandelingen</a><a href="#manieren">De salon</a><a href="#manieren">Op locatie</a><a href="#afspraak">Boek een massage</a></nav>
     <p class="bellen"><a href="tel:+31615055460">06 15 05 54 60</a></p>
-    <p class="voet-tekst">Massage in Eindhoven, in de salon en bij jou thuis.</p>
+    <p class="voet-tekst">Eindhoven · Aalsterweg 99 a · maandag en woensdag, 09:00 – 18:00<br>Nuenen · Aardappeleterssteegje 1 C · dinsdag, 09:00 – 18:00<br>Overige dagen op locatie bij jou thuis of op kantoor</p>
     <div class="voet-onder kl">
       <span>© 2026 La Main</span>
       <span>Zakelijk adres: Malcushoeve 6, 5708 TH Helmond · behandelingen in Eindhoven</span>
@@ -436,8 +443,14 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 
     /* Vertrekpunt voor de afstand. VOORLOPIG het centrum van Eindhoven,
        tot het adres van de salon bekend is. */
-    vertrek: {naam:'het centrum van Eindhoven', lat:51.4416, lon:5.4697},
-    salonAdres: 'Eindhoven (adres volgt)',
+    /* Op locatie vertrekt ze vanuit Helmond; daar worden de reiskosten vanaf gerekend. */
+    vertrek: {naam:'Helmond', lat:51.45530238, lon:5.61093128},
+
+    /* De twee salons, met de dagen waarop ze er is. */
+    salons: [
+      {id:'eindhoven', plaats:'Eindhoven', adres:'Aalsterweg 99 a, 5615 CC Eindhoven', dagen:'maandag en woensdag, 09:00 – 18:00'},
+      {id:'nuenen',    plaats:'Nuenen',    adres:'Aardappeleterssteegje 1 C, 5671 CV Nuenen', dagen:'dinsdag, 09:00 – 18:00'}
+    ],
     kmTarief: 0.39,                      /* € per km, heen én terug */
     omrijfactor: 1.35,                   /* hemelsbreed → over de weg */
     reisVast: 5, minPerKm: 1.5,          /* reistijd = 5 min + 1,5 min per km */
@@ -516,6 +529,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   var samenvatting = document.getElementById('samenvatting');
 
   function beh(){ return CONFIG.behandelingen.filter(function(b){ return b.id === S.beh; })[0] || null; }
+  function salon(){ return CONFIG.salons.filter(function(s){ return s.id === S.soort; })[0] || null; }
   function opLocatie(){ return S.soort === 'locatie'; }
   function reisOk(){ return S.reis && !S.reis.buiten && !S.reis.opAanvraag; }
   function stappen(){ return ['waar','behandeling'].concat(opLocatie() ? ['adres'] : []).concat(['overzicht']); }
@@ -570,7 +584,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     var rijen = '';
     if(S.soort) rijen += '<div><dt>Waar</dt><dd>' + (opLocatie()
       ? 'Op locatie' + (S.straat.trim() ? '<br>' + esc(S.straat) + ', ' + esc(S.postcode.toUpperCase()) + ' ' + esc(S.plaats) : '')
-      : 'In de salon<br>' + esc(CONFIG.salonAdres)) + '</dd></div>';
+      : 'In de salon · ' + esc(salon().plaats) + '<br>' + esc(salon().adres) + '<br>' + esc(salon().dagen)) + '</dd></div>';
     if(b) rijen += '<div><dt>Behandeling</dt><dd>' + esc(b.naam) + '</dd></div>';
 
     var prijs = '';
@@ -598,7 +612,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
       regels.push('Reistijd ± ' + S.reis.min + ' min enkele reis, ± ' + km1(S.reis.km) + ' km');
       regels.push('Reiskosten ' + euro(S.reis.kmVergoeding) + ' + reistijdtoeslag ' + euro(S.reis.toeslag));
     } else {
-      regels.push('In de salon');
+      regels.push('In de salon in ' + salon().plaats + ', ' + salon().adres);
     }
     regels.push('Totaal ' + euro(totaal()));
     regels.push('(berekend op la-main.nl)');
@@ -614,8 +628,11 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 
   function stapHtml(id, f){
     if(id === 'waar'){
-      return '<div class="keuzes">' +
-        '<button type="button" class="keuze" data-actie="soort" data-waarde="salon" aria-pressed="' + (S.soort === 'salon') + '"><span class="k-kap">In de salon</span><span class="k-tekst">Een stille ruimte in Eindhoven.</span></button>' +
+      return '<div class="keuzes onder-elkaar">' +
+        CONFIG.salons.map(function(s){
+          return '<button type="button" class="keuze" data-actie="soort" data-waarde="' + s.id + '" aria-pressed="' + (S.soort === s.id) + '">' +
+            '<span class="k-kap">In de salon · ' + esc(s.plaats) + '</span><span class="k-tekst">' + esc(s.adres) + '<br>' + esc(s.dagen) + '</span></button>';
+        }).join('') +
         '<button type="button" class="keuze" data-actie="soort" data-waarde="locatie" aria-pressed="' + (S.soort === 'locatie') + '"><span class="k-kap">Op locatie</span><span class="k-tekst">Thuis, of een plek die jij kiest. Reiskosten zie je vooraf.</span></button>' +
         '</div>';
     }
