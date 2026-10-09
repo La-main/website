@@ -262,7 +262,12 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 .voet .lm{height:48px;margin:0 auto 32px;color:var(--ivoor)}
 .voet nav{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 44px;font-size:11px;padding:0 20px}
 .voet nav a:hover{color:var(--ivoor)}
-.voet-onder{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;margin-top:56px;padding-top:22px;border-top:1px solid rgba(251,248,243,.14);font-size:10px;color:rgba(251,248,243,.55)}
+.voet .bellen{margin-top:30px;font-family:var(--kap);font-size:clamp(26px,2.6vw,38px);letter-spacing:.02em}
+.voet .bellen a{border-bottom:1px solid rgba(251,248,243,.3);padding-bottom:4px;transition:border-color .3s}
+.voet .bellen a:hover{border-bottom-color:var(--ivoor)}
+.voet-tekst{margin-top:16px;font-size:17px;color:rgba(251,248,243,.7)}
+.voet-onder{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 30px;margin-top:48px;padding-top:22px;border-top:1px solid rgba(251,248,243,.14);font-size:10px;color:rgba(251,248,243,.55)}
+.bel-link{border-bottom:1px solid var(--licht-lijn);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -367,7 +372,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
       <h2 class="titel-groot">Maak een afspraak</h2>
       <p class="tekst">Kies online een moment dat bij je past. Op locatie zie je de reiskosten meteen.</p>
       <div class="samenvatting" id="samenvatting"></div>
-      <p class="klein">Eerst een vraag? Telefoon en e-mail <span class="volgt">volgen</span>.</p>
+      <p class="klein">Liever even bellen? <a class="bel-link" href="tel:+31615055460">06 15 05 54 60</a></p>
     </div>
     <div class="paneel" id="paneel"></div>
   </div>
@@ -379,7 +384,12 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   <div class="wrap">
     <svg class="lm" viewBox="0 0 3032 1500" role="img" aria-label="La Main"><use href="#lm"/></svg>
     <nav class="kl" aria-label="Voettekst"><a href="#behandelingen">Behandelingen</a><a href="#manieren">De salon</a><a href="#manieren">Op locatie</a><a href="#afspraak">Boek een massage</a></nav>
-    <div class="voet-onder kl"><span>© 2026 La Main · Eindhoven</span><span>Telefoon en e-mail volgen</span></div>
+    <p class="bellen"><a href="tel:+31615055460">06 15 05 54 60</a></p>
+    <p class="voet-tekst">Massage in Eindhoven, in de salon en bij jou thuis.</p>
+    <div class="voet-onder kl">
+      <span>© 2026 La Main</span>
+      <span>Zakelijk adres: Malcushoeve 6, 5708 TH Helmond · behandelingen in Eindhoven</span>
+    </div>
   </div>
 </footer>
 
