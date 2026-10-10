@@ -59,6 +59,26 @@ de reistijd en reiskosten op postcode, en stuurt de klant daarna door naar
 Cal.com. Daar kiest de klant dag en tijd, en de afspraak komt in de Google
 Agenda van `info@la-main.nl`. La Main beheert haar agenda dus zelf.
 
+### Hoe Cal.com wordt ingericht (afgesproken 10-10-2026)
+
+Drie afspraaktypen, elk met keuze uit 60, 90 en 120 minuten en een eigen rooster:
+
+| Afspraaktype | Dagen | Tijd | Marge vooraf | Marge erna |
+|---|---|---|---|---|
+| Salon Eindhoven | maandag, woensdag | 09:00 – 18:00 | — | 15 min |
+| Salon Nuenen | dinsdag | 09:00 – 18:00 | — | 15 min |
+| Op locatie | nog te bevestigen | nog te bevestigen | 30 min | 30 min |
+
+- Gratis abonnement volstaat: één persoon, onbeperkt afspraken en afspraaktypen.
+  Het logo van Cal.com blijft onderaan de boekingspagina staan; weghalen kan
+  alleen met een betaald teamabonnement.
+- Cal.com rekent **niets** met reisafstand. De marges hierboven zijn vast.
+- De planner op de site rekent de afstand en de reiskosten uit vanaf Helmond en
+  geeft die als notitie mee bij de boeking.
+- Vraag bij het boeken om naam, telefoon en (op locatie) het adres. **Geen vragen
+  over gezondheid, blessures of zwangerschap in Cal.com**: dat zijn
+  gezondheidsgegevens en die horen bij de intake, niet in een boekingssysteem.
+
 Inrichten, één keer:
 
 1. Cal.com-account op `info@la-main.nl`, Google Agenda koppelen.
