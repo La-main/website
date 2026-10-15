@@ -11,7 +11,7 @@ aan, zoekmachines mogen erin sinds 09-10-2026).
 |---|---|
 | `index.html` | De hele pagina: opmaak, teksten en de planner. |
 | `foto/` | Veertien beelden uit de eigen fotoshoot van 15-10-2026. |
-| `video/` | De film van 40 seconden (720x1280, 6,9 MB) en het stilstaande beeld ervoor. |
+| `video/` | `la-main.mp4`: de film van 40 seconden met geluid (720x1280, 6,9 MB) plus het stilstaande beeld ervoor. `kop-telefoon.mp4`: de eerste 10 seconden zonder geluid (0,9 MB) voor de kop op de telefoon. |
 | `Shoot/` | De onbewerkte bestanden van de shoot: 111 foto's en twee films, samen 2,7 GB. Staat in `.gitignore` en gaat dus **niet** mee naar GitHub. |
 | `lettertypes/` + `lettertypes.css` | Prata, Cormorant Garamond en Montserrat, in de site zelf. Er wordt niets bij Google opgehaald. |
 | `CNAME` | `la-main.nl`, zodat GitHub Pages het eigen adres gebruikt. |
@@ -87,6 +87,17 @@ dezelfde montage (`Tezza-5116.MOV`) die nu niet gebruikt wordt.
 
 De film staat met `preload="none"` op de pagina: er wordt niets geladen tot
 iemand op afspelen drukt. Alleen het stilstaande beeld (64 kB) komt mee.
+
+**De kop.** De film is staand geschoten en past alleen beeldvullend op een
+telefoon. Daarom draait op een smal scherm (tot 900 px) de korte lus in de kop,
+en blijft op een breed scherm de foto staan. Een breed scherm haalt die film
+**niet** op: hij staat op `preload="none"` en wordt pas door een klein stukje
+JavaScript geladen als het scherm smal genoeg is. Wie "minder beweging" heeft
+ingesteld, krijgt de foto. Nagemeten: op 1440 px wordt er geen enkele mp4
+opgehaald, op 390 px 901 kB.
+
+Het scrolleffect gebruikt bewust alleen close-ups; de opnames van veraf staan
+bij "In de salon" en "Op locatie".
 
 ## Wat nog ontbreekt
 

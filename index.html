@@ -116,6 +116,13 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 .hero{position:relative;min-height:clamp(620px,92vh,920px);display:grid;place-items:center;text-align:center;color:var(--wit);
   padding:130px 20px 90px;overflow:hidden;background:var(--espresso)}
 .hero-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:saturate(.8) sepia(.18) brightness(.92)}
+/* De film is staand geschoten en past alleen op een telefoon beeldvullend.
+   Op een breed scherm blijft de foto staan en wordt er niets geladen. */
+.hero-film{display:none}
+@media(max-width:900px){
+  .hero-film{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    filter:saturate(.8) sepia(.18) brightness(.92)}
+}
 .hero .waas{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,21,14,.8) 0%,rgba(33,21,14,.34) 28%,rgba(33,21,14,.42) 64%,rgba(33,21,14,.86) 100%)}
 .hero-inhoud{position:relative;z-index:1;max-width:980px}
 .hero .naam{font-family:var(--kap);font-weight:400;font-size:clamp(50px,10.3vw,148px);line-height:1.02;letter-spacing:.1em;text-indent:.1em;text-transform:uppercase;margin:26px 0 24px}
@@ -335,6 +342,9 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 
 <section class="hero" id="top">
   <img class="hero-foto" src="foto/ruimte-breed.jpg" alt="">
+  <video class="hero-film" id="kopfilm" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1">
+    <source src="video/kop-telefoon.mp4" type="video/mp4">
+  </video>
   <div class="waas"></div>
   <div class="hero-inhoud">
     <p class="kl">Massage in Eindhoven</p>
@@ -348,7 +358,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   <div class="intro-plak">
     <div class="los vaag v1" aria-hidden="true"><img class="foto" src="foto/hand-zacht.jpg" alt=""></div>
     <div class="los vaag v2" aria-hidden="true"><img class="foto" src="foto/cupping-glazen.jpg" alt=""></div>
-    <div class="los vaag v3" aria-hidden="true"><img class="foto" src="foto/gordijn-licht.jpg" alt=""></div>
+    <div class="los vaag v3" aria-hidden="true"><img class="foto" src="foto/rug-zacht.jpg" alt=""></div>
     <div class="intro-tekst">
       <p class="kl">Een uur dat helemaal van jou is</p>
       <h2>Rust begint<br>bij aandacht</h2>
@@ -356,10 +366,10 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     </div>
   </div>
   <div class="intro-zweef" aria-hidden="true">
-    <div class="los z1"><img class="foto" src="foto/hand-rug.jpg" alt=""></div>
-    <div class="los z2"><img class="foto" src="foto/aan-het-werk.jpg" alt=""></div>
+    <div class="los z1"><img class="foto" src="foto/schouder-handen.jpg" alt=""></div>
+    <div class="los z2"><img class="foto" src="foto/voet.jpg" alt=""></div>
     <div class="los z3"><img class="foto" src="foto/handmassage.jpg" alt=""></div>
-    <div class="los z4"><img class="foto" src="foto/tafel-ruimte.jpg" alt=""></div>
+    <div class="los z4"><img class="foto" src="foto/arm-licht.jpg" alt=""></div>
   </div>
 </section>
 
@@ -378,7 +388,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
         </div>
       </article>
       <article>
-        <div class="beeld"><img class="foto" src="foto/op-locatie.jpg" alt="Een arm die wordt gemasseerd, met het strijklicht van een raam erover"></div>
+        <div class="beeld"><img class="foto" src="foto/op-locatie.jpg" alt="Een behandeling in een rustige kamer, van een afstand gezien bij lamplicht"></div>
         <h3 class="titel-kap">Op locatie</h3>
         <p>De massage komt naar je toe, thuis of op een plek die jij kiest. Reistijd en reiskosten zie je vooraf.</p>
         <button type="button" class="knop rand" data-kies="locatie">Bereken je reiskosten</button>
@@ -483,6 +493,37 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   menu.addEventListener('click', function(e){ if(e.target.closest('a')) zet(false); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !menu.hidden) zet(false); });
   window.addEventListener('resize', function(){ if(window.innerWidth > 900 && !menu.hidden) zet(false); });
+})();
+</script>
+
+<script>
+/* ============================================================
+   Kopfilm op de telefoon. De film is staand geschoten; alleen daar
+   past hij beeldvullend. Op een breed scherm blijft de foto staan en
+   wordt er niets van de film opgehaald: hij staat op preload="none"
+   en wordt pas geladen als het scherm smal genoeg is. Wie "minder
+   beweging" heeft ingesteld, krijgt gewoon de foto.
+   ============================================================ */
+(function(){
+  var film = document.getElementById('kopfilm');
+  if(!film || !film.canPlayType) return;
+  var smal = window.matchMedia('(max-width:900px)');
+  var stil = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var geladen = false;
+  function kijk(){
+    if(smal.matches && !stil.matches){
+      film.muted = true;
+      if(!geladen){ geladen = true; film.load(); }
+      var p = film.play();
+      if(p && p.catch) p.catch(function(){});
+    } else if(geladen){
+      film.pause();
+    }
+  }
+  [smal, stil].forEach(function(m){
+    if(m.addEventListener) m.addEventListener('change', kijk); else m.addListener(kijk);
+  });
+  kijk();
 })();
 </script>
 
