@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>La Main — massage in Eindhoven en Nuenen</title>
 <meta name="description" content="La Main. Massage in de salon in Eindhoven en Nuenen, en op locatie bij jou thuis of op kantoor.">
+<link rel="canonical" href="https://la-main.nl/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="La Main">
+<meta property="og:url" content="https://la-main.nl/">
+<meta property="og:title" content="La Main — massage in Eindhoven en Nuenen">
+<meta property="og:description" content="Massage in de salon in Eindhoven en Nuenen, en op locatie bij jou thuis of op kantoor.">
+<meta property="og:image" content="https://la-main.nl/foto/deel.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Een massage van La Main, bij daglicht">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="lettertypes.css">
 <style>
 /* ============================================================
@@ -103,7 +115,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:clamp(620px,92vh,920px);display:grid;place-items:center;text-align:center;color:var(--wit);
   padding:130px 20px 90px;overflow:hidden;background:var(--espresso)}
-.hero-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.8) sepia(.18) brightness(.92)}
+.hero-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;filter:saturate(.8) sepia(.18) brightness(.92)}
 .hero .waas{position:absolute;inset:0;background:linear-gradient(180deg,rgba(33,21,14,.8) 0%,rgba(33,21,14,.34) 28%,rgba(33,21,14,.42) 64%,rgba(33,21,14,.86) 100%)}
 .hero-inhoud{position:relative;z-index:1;max-width:980px}
 .hero .naam{font-family:var(--kap);font-weight:400;font-size:clamp(50px,10.3vw,148px);line-height:1.02;letter-spacing:.1em;text-indent:.1em;text-transform:uppercase;margin:26px 0 24px}
@@ -162,6 +174,30 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 .stel{position:relative;background:var(--espresso);color:var(--ivoor);text-align:center;padding:clamp(80px,9vw,120px) 0 clamp(70px,8vw,100px)}
 .stel::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 0%,rgba(255,255,255,.05),rgba(255,255,255,0) 70%)}
 .stel .tekst{position:relative;max-width:760px;margin:28px auto 0;font-size:clamp(22px,2.1vw,29px);line-height:1.5;color:rgba(251,248,243,.9)}
+.stel-grid{position:relative;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(36px,6vw,84px);align-items:center;text-align:left}
+.stel-portret{aspect-ratio:4/5;overflow:hidden}
+.stel-grid .tekst{margin:20px 0 0;max-width:32ch}
+.ondertekening{margin-top:26px;color:var(--licht-zacht)}
+@media(max-width:800px){
+  .stel-grid{grid-template-columns:1fr;text-align:center}
+  .stel-portret{max-width:340px;margin:0 auto}
+  .stel-grid .tekst{margin-left:auto;margin-right:auto}
+}
+
+/* ---------- de film ---------- */
+.film{background:var(--ivoor);padding:clamp(70px,9vw,120px) 0}
+.film-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1fr);gap:clamp(36px,6vw,90px);align-items:center}
+.film-beeld{width:100%;max-width:400px;background:var(--espresso)}
+.film-beeld video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;background:var(--espresso)}
+.film-tekst .los-tekst{font-size:clamp(19px,1.5vw,22px);line-height:1.55;color:var(--inkt-zacht);max-width:34ch;margin-bottom:30px}
+@media(max-width:800px){
+  .film-grid{grid-template-columns:1fr}
+  .film-beeld{margin:0 auto}
+  .film-tekst{text-align:center}
+  .film-tekst .los-tekst{margin-left:auto;margin-right:auto}
+}
+
 .band{position:relative;height:clamp(340px,53vw,760px);overflow:hidden;background:var(--espresso)}
 .band .foto{object-position:center 58%;filter:saturate(.75) sepia(.14)}
 .band::before{content:"";position:absolute;left:0;right:0;top:0;height:24%;z-index:1;background:linear-gradient(180deg,var(--espresso),rgba(51,35,26,0))}
@@ -298,7 +334,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 <main>
 
 <section class="hero" id="top">
-  <img class="hero-foto" src="foto/tafel-panorama.jpg" alt="">
+  <img class="hero-foto" src="foto/ruimte-breed.jpg" alt="">
   <div class="waas"></div>
   <div class="hero-inhoud">
     <p class="kl">Massage in Eindhoven</p>
@@ -308,11 +344,11 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   </div>
 </section>
 
-<section class="intro" id="over">
+<section class="intro">
   <div class="intro-plak">
-    <div class="los vaag v1" aria-hidden="true"><img class="foto" src="foto/linnen.jpg" alt=""></div>
-    <div class="los vaag v2" aria-hidden="true"><img class="foto" src="foto/linnen-detail.jpg" alt=""></div>
-    <div class="los vaag v3" aria-hidden="true"><img class="foto" src="foto/hoek-schemer.jpg" alt=""></div>
+    <div class="los vaag v1" aria-hidden="true"><img class="foto" src="foto/hand-zacht.jpg" alt=""></div>
+    <div class="los vaag v2" aria-hidden="true"><img class="foto" src="foto/cupping-glazen.jpg" alt=""></div>
+    <div class="los vaag v3" aria-hidden="true"><img class="foto" src="foto/gordijn-licht.jpg" alt=""></div>
     <div class="intro-tekst">
       <p class="kl">Een uur dat helemaal van jou is</p>
       <h2>Rust begint<br>bij aandacht</h2>
@@ -320,10 +356,10 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     </div>
   </div>
   <div class="intro-zweef" aria-hidden="true">
-    <div class="los z1"><img class="foto" src="foto/rug.jpg" alt=""></div>
-    <div class="los z2"><img class="foto" src="foto/olie-huid.jpg" alt=""></div>
-    <div class="los z3"><img class="foto" src="foto/onderarm.jpg" alt=""></div>
-    <div class="los z4"><img class="foto" src="foto/salon-cel.jpg" alt=""></div>
+    <div class="los z1"><img class="foto" src="foto/hand-rug.jpg" alt=""></div>
+    <div class="los z2"><img class="foto" src="foto/aan-het-werk.jpg" alt=""></div>
+    <div class="los z3"><img class="foto" src="foto/handmassage.jpg" alt=""></div>
+    <div class="los z4"><img class="foto" src="foto/tafel-ruimte.jpg" alt=""></div>
   </div>
 </section>
 
@@ -332,7 +368,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     <p class="kl midden">Twee manieren</p>
     <div class="twee">
       <article>
-        <div class="beeld"><img class="foto" src="foto/salon-cel.jpg" alt="Een stille ruimte met daglicht door een dun gordijn"></div>
+        <div class="beeld"><img class="foto" src="foto/tafel-raam.jpg" alt="Een behandeltafel bij daglicht uit hoge ramen"></div>
         <h3 class="titel-kap">In de salon</h3>
         <p>Een stille ruimte in Eindhoven, alleen voor jou. Je komt binnen, de deur gaat dicht en de rest van de dag wacht buiten.</p>
         <p class="praktisch"><b>Eindhoven</b> · Aalsterweg 99 a · maandag en woensdag, 09:00 – 18:00<br><b>Nuenen</b> · Aardappeleterssteegje 1 C · dinsdag, 09:00 – 18:00</p>
@@ -342,7 +378,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
         </div>
       </article>
       <article>
-        <div class="beeld"><img class="foto" src="foto/locatie-cel.jpg" alt="Een kamer bij avondlicht"></div>
+        <div class="beeld"><img class="foto" src="foto/op-locatie.jpg" alt="Een arm die wordt gemasseerd, met het strijklicht van een raam erover"></div>
         <h3 class="titel-kap">Op locatie</h3>
         <p>De massage komt naar je toe, thuis of op een plek die jij kiest. Reistijd en reiskosten zie je vooraf.</p>
         <button type="button" class="knop rand" data-kies="locatie">Bereken je reiskosten</button>
@@ -351,19 +387,40 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   </div>
 </section>
 
-<section class="stel">
-  <div class="wrap">
-    <p class="kl" style="position:relative">Stel je voor…</p>
-    <p class="tekst">Niemand verwacht iets van je. Je hoeft niets te zeggen en nergens heen. Een uur later loop je naar buiten en merk je dat je schouders lager hangen.</p>
+<section class="stel" id="over">
+  <div class="wrap stel-grid">
+    <div class="stel-portret"><img class="foto" src="foto/portret.jpg" alt="Danny Kauffeld, de vrouw achter La Main"></div>
+    <div>
+      <p class="kl">Stel je voor…</p>
+      <p class="tekst">Niemand verwacht iets van je. Je hoeft niets te zeggen en nergens heen. Een uur later loop je naar buiten en merk je dat je schouders lager hangen.</p>
+      <p class="kl ondertekening">Danny Kauffeld · La Main</p>
+    </div>
   </div>
 </section>
-<div class="band"><img class="foto" src="foto/hero.jpg" alt="Schouder en nek in warm strijklicht"></div>
+<div class="band"><img class="foto" src="foto/nek-schouder.jpg" alt="Een hand in de nek en op de schouder, bij warm strijklicht"></div>
+
+<section class="film" id="film">
+  <div class="wrap film-grid">
+    <div class="film-beeld">
+      <video controls playsinline preload="none" poster="video/film-poster.jpg" width="720" height="1280">
+        <source src="video/la-main.mp4" type="video/mp4">
+        Je browser kan deze film niet afspelen. <a href="video/la-main.mp4">Download hem hier</a>.
+      </video>
+    </div>
+    <div class="film-tekst">
+      <p class="kl">Bewegend beeld</p>
+      <h2 class="titel-kap">Even<br>kijken</h2>
+      <p class="los-tekst">Veertig seconden zonder uitleg: het licht, het tempo en de handen die het werk doen.</p>
+      <a class="knop rand" href="#afspraak">Boek een massage</a>
+    </div>
+  </div>
+</section>
 
 <section class="beh" id="behandelingen">
   <div class="wrap beh-grid">
     <div class="beh-fotos">
-      <div class="f1"><img class="foto" src="foto/hoek-schemer.jpg" alt="Een lamp in een hoek, gedempt licht"></div>
-      <div class="f2"><img class="foto" src="foto/linnen-detail.jpg" alt="Plooi van linnen"></div>
+      <div class="f1"><img class="foto" src="foto/rug-handen.jpg" alt="Twee handen die over een rug werken"></div>
+      <div class="f2"><img class="foto" src="foto/cupping-detail.jpg" alt="Een cuppingglas dat op de rug wordt gezet"></div>
     </div>
     <div>
       <p class="kl">De behandelingen</p>
@@ -399,7 +456,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     <p class="voet-tekst">Eindhoven · Aalsterweg 99 a · maandag en woensdag, 09:00 – 18:00<br>Nuenen · Aardappeleterssteegje 1 C · dinsdag, 09:00 – 18:00<br>Overige dagen op locatie bij jou thuis of op kantoor</p>
     <div class="voet-onder kl">
       <span>© 2026 La Main</span>
-      <span>Zakelijk adres: Malcushoeve 6, 5708 TH Helmond · behandelingen in Eindhoven</span>
+      <span>Zakelijk adres: Malcushoeve 6, 5708 TH Helmond · behandelingen in Eindhoven en Nuenen</span>
     </div>
   </div>
 </footer>
@@ -439,11 +496,13 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
    ============================================================ */
 (function(){
   var CONFIG = {
-    /* Cal.com. Vul `gebruiker` in met de naam uit de link van Cal.com
-       (cal.com/<gebruiker>) en per behandeling de naam van het
-       afspraaktype. Zolang `gebruiker` leeg is, blijft de knop uit en
-       komt er niemand op een dood adres uit. */
-    cal: { basis:'https://cal.com/', gebruiker:'' },
+    /* Cal.com. `gebruiker` is de naam uit de link (cal.com/<gebruiker>).
+       Elke salon heeft hieronder zijn eigen afspraaktype in `cal`, op
+       locatie gaat naar `locatie`. De duur gaat als `duration` mee, dus
+       één afspraaktype per plek is genoeg.
+       Zolang `gebruiker` leeg is, blijft de knop uit en komt er niemand
+       op een dood adres uit. */
+    cal: { basis:'https://cal.com/', gebruiker:'', locatie:'op-locatie' },
 
     /* Vertrekpunt voor de afstand. VOORLOPIG het centrum van Eindhoven,
        tot het adres van de salon bekend is. */
@@ -452,8 +511,8 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
 
     /* De twee salons, met de dagen waarop ze er is. */
     salons: [
-      {id:'eindhoven', plaats:'Eindhoven', adres:'Aalsterweg 99 a, 5615 CC Eindhoven', dagen:'maandag en woensdag, 09:00 – 18:00'},
-      {id:'nuenen',    plaats:'Nuenen',    adres:'Aardappeleterssteegje 1 C, 5671 CV Nuenen', dagen:'dinsdag, 09:00 – 18:00'}
+      {id:'eindhoven', plaats:'Eindhoven', adres:'Aalsterweg 99 a, 5615 CC Eindhoven', dagen:'maandag en woensdag, 09:00 – 18:00', cal:'salon-eindhoven'},
+      {id:'nuenen',    plaats:'Nuenen',    adres:'Aardappeleterssteegje 1 C, 5671 CV Nuenen', dagen:'dinsdag, 09:00 – 18:00', cal:'salon-nuenen'}
     ],
     kmTarief: 0.39,                      /* € per km, heen én terug */
     omrijfactor: 1.35,                   /* hemelsbreed → over de weg */
@@ -462,9 +521,9 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
       {tot:10, toeslag:0}, {tot:20, toeslag:15}, {tot:35, toeslag:30}, {tot:Infinity, toeslag:null}
     ],
     behandelingen: [                     /* 60 min bevestigd; 90 en 120 VOORLOPIG */
-      {id:'m60',  naam:'Massage 60 minuten',  duur:60,  prijs:90,  cal:'', tekst:'Een volledige massage in een rustig tempo.'},
-      {id:'m90',  naam:'Massage 90 minuten',  duur:90,  prijs:130, cal:'', tekst:'Meer tijd voor wat aandacht vraagt.'},
-      {id:'m120', naam:'Massage 120 minuten', duur:120, prijs:170, cal:'', tekst:'Alle tijd, van top tot teen.'}
+      {id:'m60',  naam:'Massage 60 minuten',  duur:60,  prijs:90,  tekst:'Een volledige massage in een rustig tempo.'},
+      {id:'m90',  naam:'Massage 90 minuten',  duur:90,  prijs:130, tekst:'Meer tijd voor wat aandacht vraagt.'},
+      {id:'m120', naam:'Massage 120 minuten', duur:120, prijs:170, tekst:'Alle tijd, van top tot teen.'}
     ],
     postcodes: [
       [5611,5612,'Eindhoven-Centrum',51.4395,5.4770],
@@ -612,7 +671,7 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
   function notitie(){
     var b = beh(), regels = [b.naam];
     if(opLocatie()){
-      regels.push('Op locatie: ' + S.straat.trim() + ', ' + S.postcode.trim().toUpperCase() + ' ' + S.plaats.trim());
+      regels.push('Op locatie: ' + adresRegel());
       regels.push('Reistijd ± ' + S.reis.min + ' min enkele reis, ± ' + km1(S.reis.km) + ' km');
       regels.push('Reiskosten ' + euro(S.reis.kmVergoeding) + ' + reistijdtoeslag ' + euro(S.reis.toeslag));
     } else {
@@ -623,11 +682,24 @@ body.menu-open .nav{background:rgba(40,27,20,.97)}
     return regels.join('\n');
   }
 
+  function adresRegel(){
+    return S.straat.trim() + ', ' + S.postcode.trim().toUpperCase() + ' ' + S.plaats.trim();
+  }
+
+  /* De link naar Cal.com: het afspraaktype van de plek, de gekozen duur
+     en de berekening als notitie. Bij op locatie gaat het adres van de
+     klant al mee, zodat die het niet nog een keer hoeft te typen. */
   function calLink(){
-    var b = beh();
-    if(!b || !CONFIG.cal.gebruiker || !b.cal) return null;
+    var b = beh(), s = salon();
+    if(!b || !CONFIG.cal.gebruiker) return null;
+    var soort = opLocatie() ? CONFIG.cal.locatie : (s ? s.cal : '');
+    if(!soort) return null;
     if(opLocatie() && !reisOk()) return null;
-    return CONFIG.cal.basis + CONFIG.cal.gebruiker + '/' + b.cal + '?notes=' + encodeURIComponent(notitie());
+    var vraag = ['duration=' + b.duur, 'notes=' + encodeURIComponent(notitie())];
+    if(opLocatie()){
+      vraag.push('location=' + encodeURIComponent(JSON.stringify({value:'attendeeInPerson', optionValue:adresRegel()})));
+    }
+    return CONFIG.cal.basis + CONFIG.cal.gebruiker + '/' + soort + '?' + vraag.join('&');
   }
 
   function stapHtml(id, f){

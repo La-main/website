@@ -10,7 +10,9 @@ aan, zoekmachines mogen erin sinds 09-10-2026).
 | Bestand | Wat het is |
 |---|---|
 | `index.html` | De hele pagina: opmaak, teksten en de planner. |
-| `foto/` | Tien beelden. **Tijdelijke foto's van Unsplash**, niet de salon zelf. |
+| `foto/` | Veertien beelden uit de eigen fotoshoot van 15-10-2026. |
+| `video/` | De film van 40 seconden (720x1280, 6,9 MB) en het stilstaande beeld ervoor. |
+| `Shoot/` | De onbewerkte bestanden van de shoot: 111 foto's en twee films, samen 2,7 GB. Staat in `.gitignore` en gaat dus **niet** mee naar GitHub. |
 | `lettertypes/` + `lettertypes.css` | Prata, Cormorant Garamond en Montserrat, in de site zelf. Er wordt niets bij Google opgehaald. |
 | `CNAME` | `la-main.nl`, zodat GitHub Pages het eigen adres gebruikt. |
 
@@ -76,11 +78,18 @@ Daarna opnieuw bouwen en pushen. Zolang `gebruiker` leeg is, staat op de site
 werkgebied of boven 35 minuten reistijd kan er nooit direct geboekt worden;
 daar staat dat de klant contact opneemt.
 
+## Beeld
+
+Sinds 15-10-2026 staat er eigen werk op de site. De bron ligt in `Shoot/`;
+het uitsnijden gaat met `la-main-opzetjes` (zie het geheugen voor de scripts).
+De film komt uit `Tezza-7745.MOV`; er is ook een zwart-witte versie van
+dezelfde montage (`Tezza-5116.MOV`) die nu niet gebruikt wordt.
+
+De film staat met `preload="none"` op de pagina: er wordt niets geladen tot
+iemand op afspelen drukt. Alleen het stilstaande beeld (64 kB) komt mee.
+
 ## Wat nog ontbreekt
 
-- **Echte fotografie.** Grootste punt. De kamerfoto's bij "In de salon" en
-  "Op locatie" zijn niet de salon, en in de briefing staat "geen witte
-  handdoeken" terwijl er nu gestapeld wit linnen in beeld is.
 - **Haar verhaal.** Er staat geen naam, geen gezicht en geen opleiding op de
   site. De vragen daarvoor staan in
   `C:\Users\Robbi\Projects\la-main-opzetjes\VRAGEN-VOOR-LA-MAIN.md`.
