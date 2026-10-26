@@ -43,40 +43,57 @@ staat op `p=none`: meekijken, nog niets weigeren.
 
 ## Boeken: de planner en Cal.com
 
-De pagina rekent zelf niets vast. Hij bepaalt de behandeling en, bij op locatie,
-de reistijd en reiskosten op postcode, en stuurt de klant daarna door naar
-Cal.com. Daar kiest de klant dag en tijd, en de afspraak komt in de agenda van
-La Main. Zij beheert haar agenda dus zelf.
+**Werkt sinds 26-10-2026.** De pagina rekent zelf niets vast. Hij bepaalt de
+massage, de duur en, bij op locatie, de reistijd en reiskosten op postcode, en
+stuurt de klant daarna door naar Cal.com. Daar kiest de klant dag en tijd, en de
+afspraak komt in de agenda **Werk** van Danny (iCloud). Zij beheert haar agenda
+dus zelf.
 
-**Het inrichten van Cal.com staat stap voor stap in
-`C:\Users\Robbi\Projects\la-main-opzetjes\CAL-COM-INRICHTEN.md`.** Kort:
+| Afspraaktype | URL | Dagen en tijden | Marge vooraf | Marge erna |
+|---|---|---|---|---|
+| Salon Eindhoven | `salon-eindhoven` | ma, wo 09:00 – 17:00 | — | 15 min |
+| Salon Nuenen | `salon-nuenen` | di 09:00 – 17:00 | — | 15 min |
+| Op locatie | `op-locatie` | ma, di, wo 19:00 – 22:00 · do 09:00 – 17:00 én 19:00 – 22:00 · vr 09:00 – 17:00 | 30 min | 30 min |
 
-| Afspraaktype | URL | Dagen | Tijd | Marge vooraf | Marge erna |
-|---|---|---|---|---|---|
-| Salon Eindhoven | `salon-eindhoven` | maandag, woensdag | 09:00 – 18:00 | — | 15 min |
-| Salon Nuenen | `salon-nuenen` | dinsdag | 09:00 – 18:00 | — | 15 min |
-| Op locatie | `op-locatie` | nog te bevestigen | nog te bevestigen | 30 min | 30 min |
+Weekenden dicht. Minimaal 12 uur van tevoren boeken. Alle drie vragen om naam,
+e-mail, **telefoonnummer (verplicht)** en **welke massage**. Op locatie vraagt
+daarnaast **voor wie** en moet Danny elke aanvraag zelf goedkeuren
+(*Vereist bevestiging* staat aan).
 
-- Eén afspraaktype per plek, met 60, 90 en 120 minuten in één lijstje. De site
-  geeft de gekozen duur mee als `?duration=`, de berekening als `?notes=` en bij
-  op locatie het adres van de klant als `?location=`.
-- Gratis abonnement volstaat: één persoon, onbeperkt afspraken en afspraaktypen.
-  Het logo van Cal.com blijft onderaan de boekingspagina staan.
+- Eén afspraaktype per plek. De site geeft de gekozen duur mee als
+  `?duration=`, de berekening als `?notes=` en bij op locatie het adres van de
+  klant als `?location=`.
+- Op locatie kan 60 tot 240 minuten, zodat een **stel** twee behandelingen na
+  elkaar kan nemen zonder dat ze twee keer rijdt.
+- Gratis abonnement volstaat. Het logo van Cal.com blijft onderaan staan.
 - Cal.com rekent **niets** met reisafstand. De marges hierboven zijn vast.
-- Vraag bij het boeken om naam, telefoon en (op locatie) het adres. **Geen
-  vragen over gezondheid, blessures of zwangerschap in Cal.com**: dat zijn
-  gezondheidsgegevens en die horen bij de intake, niet in een boekingssysteem.
+- **Geen vragen over gezondheid, blessures of zwangerschap in Cal.com**: dat
+  zijn gezondheidsgegevens en die horen bij de intake, niet in een
+  boekingssysteem. De zwangerschapsmassage is alleen een keuze, geen vragenlijst.
 
-Zodra de drie links bestaan, hoeft er in de werkversie één woord in:
+### Wat de planner op de site doet
 
-```js
-cal: { basis:'https://cal.com/', gebruiker:'la-main', locatie:'op-locatie' },
-```
+Zes stappen: waar → welke massage → hoe lang → (op locatie) voor wie → (op
+locatie) adres → overzicht.
 
-Daarna opnieuw bouwen en pushen. Zolang `gebruiker` leeg is, staat op de site
-"Agenda volgt" en komt niemand op een dood adres uit. Bij op locatie buiten het
-werkgebied of boven 35 minuten reistijd kan er nooit direct geboekt worden;
-daar staat dat de klant contact opneemt.
+- **Vier massages**, alle vier dezelfde prijs: ontspanningsmassage, ontspanning
+  met cuppen, alleen cuppen, zwangerschapsmassage. De prijs hangt alleen af van
+  de duur: 60 min € 90 · 90 min € 130 · 120 min € 170.
+- **Een stel** betaalt twee keer de behandeling en één keer reiskosten, en krijgt
+  de dubbele tijd mee naar Cal.com (2 × 90 min = `duration=180`).
+- **Op locatie werkt La Main alleen bij vrouwen en bij stellen.** Kiest iemand
+  "een man", dan blokkeert de planner met een uitleg en een verwijzing naar de
+  salon. Besluit van Robbie en Danny, 26-10-2026.
+- Buiten het werkgebied of boven 35 minuten reistijd kan er nooit direct geboekt
+  worden; daar staat dat de klant contact opneemt.
+
+De reiskosten: € 0,39 per kilometer heen én terug vanaf Helmond (hemelsbreed ×
+1,35), plus een reistijdtoeslag van € 0 tot 10 minuten, € 15 tot 20 minuten en
+€ 30 tot 35 minuten.
+
+Alles wat je wilt wijzigen staat in `CONFIG` bovenin het laatste script van
+`la-main-opzetjes\pagina-h\index.html`. Het inrichtblad van Cal.com staat in
+`la-main-opzetjes\CAL-COM-INRICHTEN.md`.
 
 ## Beeld
 
@@ -101,9 +118,11 @@ bij "In de salon" en "Op locatie".
 
 ## Wat nog ontbreekt
 
-- **Haar verhaal.** Er staat geen naam, geen gezicht en geen opleiding op de
-  site. De vragen daarvoor staan in
+- De prijzen van **90 en 120 minuten**. Alleen € 90 voor 60 minuten is door
+  Danny bevestigd; € 130 en € 170 zijn nog een aanname.
+- **De productfoto van de olie.** Zolang die er niet is, staat de olietekst in
+  één kolom in het midden; met foto wordt het weer twee kolommen.
+- **Haar verhaal.** Naam en portret staan er sinds 15-10, maar opleiding,
+  ervaring en waarom ze dit doet nog niet. De vragen staan in
   `C:\Users\Robbi\Projects\la-main-opzetjes\VRAGEN-VOOR-LA-MAIN.md`.
-- De prijzen van 90 en 120 minuten (alleen € 90 voor 60 minuten is bevestigd).
 - Annuleringsvoorwaarden, KvK- en btw-nummer, privacyverklaring.
-- Op welke dagen en tijden ze op locatie werkt.
