@@ -1,5 +1,30 @@
 # Website La Main
 
+> ## ⚠️ DE SITE STAAT NIET ONLINE (29-10-2026)
+>
+> Op `la-main.nl` staat een "binnenkort online"-pagina met alleen het logo en
+> `noindex`. De mappen `foto/` en `video/` zijn uit deze map gehaald, zodat er
+> geen beeldmateriaal meer publiek staat.
+>
+> **`index.html` in deze map is dus NIET de site** — het is die ene pagina. De
+> echte site staat ongewijzigd in `la-main-opzetjes\pagina-h\index.html` en in
+> de geschiedenis op commit `4dfb1d1`.
+>
+> **Weer online, één commando:**
+>
+> ```powershell
+> powershell C:\Users\Robbi\Projects\la-main-opzetjes\bron\weer-online.ps1
+> ```
+>
+> Dat bouwt, controleert en pusht. Met `-droog` bouwt hij alleen.
+> Terug naar de binnenkort-pagina gaat met `bron\offline.ps1`.
+>
+> **Alleen doen als Robbie er uitdrukkelijk om vraagt.**
+>
+> Domein, HTTPS en de mail op `info@la-main.nl` zijn niet geraakt.
+> **Let op: `cal.com/la-main` staat nog wél publiek** — daar kan nog geboekt
+> worden. Wil je dat ook stil, verberg dan de drie afspraaktypen in Cal.com.
+
 De site van La Main, massage in Eindhoven en Nuenen. Eén pagina met een
 afspraakplanner. Geen framework en geen bouwstap: `index.html` openen en het
 werkt.
